@@ -155,3 +155,23 @@ def func(arg1,arg2):
 	"""
 	return res1,res2
 ```
+
+--------------------------------------------------------------------------------
+
+# Manipulation de fichiers
+
+## Ouvrir un fichier
+
+```
+file = open(path_to_file, flag)
+```
+
+Les flags sont les suivants : r, w, a, rb, wb (les derniers pour des données binaires)
+
+## Lecture d'un fichier
+
+```
+for line in file
+	for character in line
+		# do something with the character
+```
