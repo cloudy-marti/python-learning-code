@@ -1,11 +1,11 @@
-Feuille de triche Python
+Python
 =========================
-Dernière mise à jour: 17/03/2020
+Updated: 14/04/2020
 
 
-# A ne pas oublier
+# Do not forget
 
-1. l'indentation est signifiante:
+1. Indent is important
 ```python
 if True:
     print ("Dans le if")
@@ -13,16 +13,16 @@ if True:
 print ("Pas dans le if")
 ```
 
-2. Les chaînes peuvent être entre " ou ' 
+2. String have to be between " or ' 
  
-3. On lance le programme depuis le terminal avec `python3 helloworld.py`
+3. We execute the script with `python3 helloworld.py`
 
-4. Les commentaires suivent un #
+4. Comments are written after an #
 
-5. Les blocs de commentaires se trouvent entre """:
+5. Bloc comments are found between """:
 ```python
 """
-    Bloc de commentaire
+    Write a comment that will be only read by the developper
 """
 ```
 
@@ -30,8 +30,8 @@ print ("Pas dans le if")
 # Structure
 ## If then else
 
-Syntaxe générale:
-```
+Syntax:
+```python
 if test:
     ...
     ...
@@ -40,7 +40,7 @@ else:
     ...
 ```
 
-Plusieurs conditions
+Several conditions
 ```python
 if test or test:
     ...
@@ -53,31 +53,30 @@ else:
     ...
 ```
 
-## Boucle `for`
+## `for` loop
 
-> Les boucles `for` sont en fait des *pour chaque éléments*.  Ils itérerent sur
-> des structures.
+> `for` are "for each" elements in a collection
 
-1. Pour la boucle for classique, utiliser `range` (plus loin):
-```
+1. `range`
+```python
   for i in range(10):   # pour i dans [0,1,...9]
     print (i)
 ```
 
-2. Itérer sur une liste
-```
+2. Iterate through a list
+```python
   for element in ["Victor", "Nadime"]:
     print (element)
 ```
 
-3. Itérer sur une chaîne de caractère
-```
+3. Iterate through a string
+```python
   for c in "Hello World!"       #affiche une lettre par ligne, donc 12 en tout
     print(c);
 ```
 
-4. Itérer sur un fichier
-```
+4. Iterate through a file
+```python
 import sys
 file = open("test.txt", "w")      # On ouvre le fichier "test.txt" en écriture
 for x in [2**i for i in range(11)]:  # On écrit quelquechose dedans
@@ -90,30 +89,30 @@ for line in file:       # Pour chaque ligne dans `file`
                           # En effet, chaque ligne termine déjà par un `\n`
 ```
 
+5. Iterate with `enumerate`
+```python
+for index, element in enumerate(list) :
+    # TODO
+```
+
 --------------------------------------------------------------------------------
-# Les listes
+# Collections
 
-## La fonction `range`
+## `range`
 
-* `range(10)` crée la liste [0,1,...,9]
-* `range(3,10)` crée la liste [3,4,...,9] 
-* `range(3,10,2)` créé la liste [3,5,7,9]
-* `range(10,0,-1)` crée la liste [10,9,...,2,1]
+* `range(10)` create the list [0,1,...,9]
+* `range(3,10)` create the list [3,4,...,9] 
+* `range(3,10,2)` create the list [3,5,7,9]
+* `range(10,0,-1)` create the list [10,9,...,2,1]
 
-
-Moyen mnémotechnique:
+Prototype:
                      `range( x,  y,  incr)`
-  premier élément qui y est--^   ^     ^-- incrément
-                                 |
-           premier élément qui y est pas
 
+# Dictionaries
 
+> Structures indexed by a key. Each element corresponds to a key/value pair.
 
-# Les dictionnaires
-
-> Il s'agit d'une structure indexée par des clés. Pour chaque élément, on a donc un couple clé/valeur.
-
-## Création
+## Creation
 
 ```python
 empty_dict = {}
@@ -133,7 +132,7 @@ dict1 = dict([
 ])
 ```
 
-## Opérations
+## Operations
 
 ```python
 ## Return the value associated to 'key'
@@ -148,15 +147,14 @@ dict.pop('key')
 ## More functions at : https://realpython.com/python-dicts/
 ```
 
-# Les tuples
+# Tuples
 
->Il s'agit d'un tableau immutable.
+> It is an inchangeable array
 >
->* Il est de taille fixe.
->* Les éléments ne peuvent etre modifiés.
->* On accède aux éléments comme avec un tableau.
+>* It has a fixed size.
+>* Elements cannot be changed.
 
-## Création
+## Creation
 
 ```python
 empty_tuple = ()
@@ -166,7 +164,7 @@ single_tuple = ('e',)
 tuple1 = ('e1', 'e2', 'e3', ...)
 ```
 
-## Accès aux valeurs
+## Value access
 ```python
 index = 0
 
@@ -175,11 +173,14 @@ tuple[index]
 
 # get multiple values at index, index + 1, index + 2
 tuple[index:index+2]
+
+# get tuple values into variables
+a, b, c = (1, 2, 3)
 ```
 
-# Les listes
+# Lists
 
-## Création
+## Creation
 ```python
 empty_list = []
 
@@ -189,7 +190,7 @@ list0 = ["e1", "e2", ... , "e"]
 list1 = ["e1", 0, 1.4, ['another', 'list']]
 ```
 
-## Opérations
+## Add and remove
 ```python
 ### Add e at the end of the list
 list.append("e")
@@ -202,35 +203,73 @@ list.pop()
 
 ### Remove element at position i
 list.pop(i)
-
-### Another operations at : https://www.geeksforgeeks.org/python-list/
 ```
->* Les indices du tuple commencent par 0 ; un indice négatif signifie qu'on commence à compter à partir de la fin du tableau.
->* Un indice *i* suivi de : indique tous les indices après *i*, ce dernier inclus.
+
+>* Tuple indexes begin with 0 ; a negative index means that we start counting by the end of the array.
+
+## `*slice*`
+
+>slice returns a copy of a part of the list.
+
+```python
+# Return list from index 1 to 4
+list[1:4]
+
+# Return list starting from index 2
+list[2:]
+
+# Return list from index 0 to index 4
+list[:4]
+
+# Deep copy of a list
+list[:]
+```
+
+# `Set`
+>Sets are collections that don't allow redundancy on their elements.
+
+```python
+# initialize an empty set
+empty_set = set()
+
+# initialize a set
+my_set = {1, 1, 2, 4, 8, 8} # will be {1, 2, 4, 8}
+```
+
+## Operations
+
+### Add elements
+```python
+empty_set = set()
+empty_set.add(1)
+empty_set.add(2)
+empty_set.add(1) # won't be added
+```
 
 --------------------------------------------------------------------------------
-# Affichage
+# Display
 
 ## print()
 
->On peut utiliser print("str") ou print "str" pour afficher une chaine de caractères.
+>We can use print("str") to display a string
 
-## Formattage
+## Format
 
->On peut formatter une ligne avec la méthode .format() des chaines de caractères. On met {} avec l'index correspondant pour choisir les arguments de format() qui vont remplacer les accolades.
+>We can format a string with the method .format(). We put the formatted arguments betwenen {} with the corresponding index.
 
-```
+```python
 age=25
-print("Hello World, I am {0} years old.".format(age))
+name=Bob
+print("Hello World, I am {0} years old and my name is {1}.".format(age, name))
 ```
 
 --------------------------------------------------------------------------------
 
-# Définition d'une fonction
+# Function definition
 
-## Fonctions à 1 valeur de retour
+## Function with one return value
 
-```
+```python
 def func(arg1,arg2):
 	"""
 	TODO : implement function
@@ -238,11 +277,11 @@ def func(arg1,arg2):
 	return res
 ```
 
-## Fonctions à plusieurs valeurs de retour
+## Functions with multiple return values
 
->Ces fonctions retournent un **tuple**.
+> These functions return a **tuple**.
 
-```
+```python
 def func(arg1,arg2):
 	"""
 	TODO : implement function
@@ -252,19 +291,19 @@ def func(arg1,arg2):
 
 --------------------------------------------------------------------------------
 
-# Manipulation de fichiers
+# Files
 
-## Ouvrir un fichier
+## Open file
 
-```
+```python
 file = open(path_to_file, flag)
 ```
 
 >Les flags sont les suivants : r, w, a, rb, wb (les derniers pour des données binaires)
 
-## Lecture d'un fichier
+## Read file
 
-```
+```python
 for line in file
 	for character in line
 		# do something with the character
@@ -272,12 +311,30 @@ for line in file
 
 --------------------------------------------------------------------------------
 
-# Paramètres
+# Parameters
 
-## Arguments variadiques
+## Arguments
+
+```python
+# python hello.py hello world
+
+import sys
+
+# get number of arguments
+len(sys.argv)
+
+# return the name of the script
+sys.argv[0]
+
+# return first argument
+sys.argv[1]
+
+```
+
+## Variadic arguments
 
 ### *\*args*
-> Permet de passer plusieurs arguments qui pourront être itérés depuis la fonction.
+> Allows several parameters to be passed to the function and be iterated
 
 ```python
 def function(*args):
@@ -288,7 +345,7 @@ function("e1", "e2", "e3", ...)
 ```
 
 ### *\*kwargs*
-> Permet de passer plusieurs arguments associés à une clé qui pourront être itérés depuis la fonction.
+> Pass several arguments associated to a key
 
 ```python
 def function(**kwargs):
@@ -297,3 +354,6 @@ def function(**kwargs):
 
 function(a="e1", b="e2", c="e3", ...)
 ```
+
+--------------------------------------------------------------------------------
+
