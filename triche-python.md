@@ -246,6 +246,27 @@ empty_set.add(2)
 empty_set.add(1) # won't be added
 ```
 
+# Operations with collections
+
+>Following operations return a new collection :
+
+## Intersection
+```python
+# get common elements between list1 and list2
+list1 & list2 
+```
+
+## Union
+```python
+# get all elements list1 and list2
+list1 | list2 
+```
+
+## Difference
+```python
+# get elements of list1 minus the common elements between list1 and list2
+list1 - list2 
+```
 --------------------------------------------------------------------------------
 # Display
 
@@ -297,9 +318,13 @@ def func(arg1,arg2):
 
 ```python
 file = open(path_to_file, flag)
+
+# Cleanup resources after using the file
+with open(path_to_file) as file:
+	# TODO
 ```
 
->Les flags sont les suivants : r, w, a, rb, wb (les derniers pour des données binaires)
+>Flags : r, w, a, rb, wb
 
 ## Read file
 
@@ -307,6 +332,42 @@ file = open(path_to_file, flag)
 for line in file
 	for character in line
 		# do something with the character
+```
+
+--------------------------------------------------------------------------------
+# Function and Class definition
+
+```python
+class MyClass:
+	def __init__(self, a, b):
+		self.a = a
+		self.b = b
+		
+	def instance_function(self):
+		# TODO
+	
+	def instance_function_with_args(self, x, y):
+		# TODO
+		
+def not_instance_function(x, y):
+	# TODO
+```
+
+## Function definition
+```python
+def add(x, y):
+	return x+y
+	
+a = 2
+b = 3
+add(a, b) # returns 5
+```
+
+## Anonymous functions
+```python
+a = 2
+b = 3
+(lambda x, y: x + y)(a, b) # returns 5
 ```
 
 --------------------------------------------------------------------------------
