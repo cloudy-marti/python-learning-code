@@ -8,13 +8,17 @@ Updated: 18/04/2020
 2. [Setup](#setup)\
 2.1. [Download Python](#download-python)\
 2.2. [PyCharm IDE](#pycharm-ide)\
-2.3. [Executing python scripts outside the IDE](#executing-python-scripts-outside-the-ide)
-3. [Programming with Python](#programming-with-python)\
-3.1. [Indent is important](#indent-is-important)\
-3.2. [Comments](#comments)\
-3.3. [Variables](#variables)\
-3.4. [Primitive Built-in Types and Operators](#primitive-built-in-types-and-operators)\
-3.5. [Interactive program](#interactive-program)
+2.3. [Executing python scripts outside the IDE](#executing-python-scripts-outside-the-ide)\
+3. [Version Control](#version-control)\
+3.4. [Create a Project](#create-a-project)\
+3.5. [Manage your project](#manage-your-project)
+4. [Programming with Python](#programming-with-python)\
+4.1. [Indent is important](#indent-is-important)\
+4.2. [Comments](#comments)\
+4.3. [Variables](#variables)\
+4.4. [Primitive Built-in Types and Operators](#primitive-built-in-types-and-operators)\
+4.5. [Interactive program](#interactive-program)\
+4.6. [Commandline Arguments](#commandline-arguments)
 
 # Firsts Steps
 
@@ -65,6 +69,84 @@ You can also execute python files using the standard console of your computer. I
 # python3 path_to_file.py arg1 arg2
 python3 My_First_Program.py # output : Hello World !
 ```
+
+## Version Control
+
+This section is not a Python-specific tool. However, this is a powerful tool and every developer should learn to use it to keep track of their work, even when they are learning.
+
+A version control tool is a system that tracks changes in source code during software development. It allows to keep the history of the changes and even collaborate with other developers on the same project.
+
+The version control software that is used in this guide is ``GitHub`` as it is free, open source and widely used by the community but feel free to explore other version control software and choose the one you like the most.
+
+Install ``git`` on your computer. You can download it [here](https://gitforwindows.org) for Windows. Install at least ``Git BASH``.
+
+You can go on [GitHub](https://github.com) and create an account.
+
+### Create a project
+
+Click on the ``Start a Project`` button on your dashboard and you will be redirected. You will need to choose a Repository name like ``Python_Course`` and write a description if you want to.
+
+You can choose to put your repository in public or in private. Private repositories are only visible by the owner and the collaborators of the project.
+
+Usually you initialize the repository with a README and choose a ``.gitignore`` (in this case, search for the Python gitignore). This file will list all the files you don't need to save on the repository (such as binaries or the IDE configuration files) and keep your project clean.
+
+Now you can click on ``Create repository`` and get started.
+
+### Manage your project
+
+Now that your project is created, you want to get a local copy on your computer so you can work on it. To do that, click on the ``Clone or download`` button and copy the URL it gives you. Then go to your workspace and open git bash, then type:
+
+```bash
+git clone URL_you_copied
+```
+
+Your repository has been created.
+
+If you use PyCharm and want to keep your distant repository clean, open your .gitignore file and append at the end all the lines you find [here](https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore). This is a specific gitignore for all JetBrains IDE.
+
+Now start by creating a project with PyCharm inside the newly cloned project. Create a file and write some code, then return to your git bash console to see the files you just created.
+
+```bash
+cd Python_Course\
+# this will list your changes
+git status
+```
+
+In order to update the changes you made locally in the distant repository, you need to stage your changes so they are ready to be commited.
+
+```bash
+# stage all of your changes
+git add .
+# or stage only the changes in a specific file
+git add your_file.py
+```
+
+Then you want to capture a "snapshot" of your work, that is, the current state of your project.
+
+```bash
+# you must explain the reason of your commit
+git commit -m "Started Work"
+```
+
+Now that you have your snapshot by the name of "Started Work" captured, you may want to update your distant repository with these changes.
+
+```bash
+# push changes into the distant repository
+git push
+```
+
+Now get back to GitHub and reload the website. You can now see your modifications online !
+
+If you need to work on this same project in another computer, just clone the project as shown above and repeat these steps. When you go back to the first computer, be sure to update your local copy of the project before doing any modification.
+
+```bash
+# retrieve the state of the distant repository
+git pull
+```
+
+Everytime you make modifications, be sure to update your distant repository. By doing so, if anything happened to your computer, you won't ever lose your work, because it will be always available in your GitHub account.
+
+This guide is available on my account: [here](https://github.com/hyliancloud/INFO_Python).
 
 ## Programming with Python
 
@@ -215,3 +297,28 @@ print(input_str)
 ```
 
 The ``input()`` function will read what the user writes in the console until the first end of line (EOL).
+
+### Commandline Arguments
+
+Another way to interact with the outside is to take in consideration parameters given within the commandline, when executing the program.
+
+To do so, we need to import the library ``sys`` that will allow us to access the commandline. We will then be able to retrieve the arguments.
+
+```bash
+python3 hello.py hello World
+```
+
+```python
+import sys
+
+# get number of arguments
+len(sys.argv)
+
+# first element of argv is always the name of the script
+program = sys.argv[0]
+
+hello = sys.argv[1]
+world = sys.argv[2]
+
+print(hello + world + " !") # output : hello world !
+```
