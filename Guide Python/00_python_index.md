@@ -10,27 +10,3 @@ Welcome to the Python beginner guide !
 4. [Functions](./04_python_functions.md)
 5. [Collections](./05_python_collections.md)
 6. [Object Oriented Programming](./06_python_object_orientation.md)
-
---------------------------------------------------------------------------------
-
-# Files
-
-## Open file
-
-```python
-file = open(path_to_file, flag)
-
-# Cleanup resources after using the file
-with open(path_to_file) as file:
-	# TODO
-```
-
->Flags : r, w, a, rb, wb
-
-## Read file
-
-```python
-for line in file
-	for character in line
-		# do something with the character
-```
