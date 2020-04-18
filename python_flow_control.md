@@ -134,7 +134,7 @@ print("End of loop !")
 
 ## ``Enumerate`` Function
 
-We can also use the function ``enumerate()`` function to iterater through a collection with an index.
+We can also use the function ``enumerate()`` function to iterate through a collection with an index.
 
 ```python
 my_collection = [3, 2, 3, 6, 1]
