@@ -1,6 +1,7 @@
 Python
 =========================
 Updated: 18/04/2020
+[Return to Index](./00_python_index.md)
 
 # Table of contents
 
