@@ -36,19 +36,25 @@ static_functions
 
 The init method will specify how an object is instanciated. Static functions can also be defined outside of the class (in the same file). These functions don't need an instanciated object to be called.
 
+When printing an object, we get the name of the class and the memory address where it is kept. We can provide a default string that represents better our object through the ``__str__()`` instance method.
+
 ### Example
 
 ```python
 class Pokemon:
 
 	def __init__(self, name, genre, life, attack_moves):
-		self.name = name
+		self.pokemon = name
+		self.petname = name
 		self.genre = genre
 		self.life = life
 		self.attack_moves = attack_moves
 
+	def __str__(self):
+		return "<" + self.pokemon + ":" + self.petname + ">"
+
 	def change_name(self, new_name):
-		self.name = new_name
+		self.petname = new_name
 
 	def is_ko(self):
 		return self.life == 0
@@ -59,9 +65,7 @@ pikachu.change_name("Yoshi")
 if pikachu.is_ko:
 	print("too sad")
 else:
-	print(pikachu.name + ", go!") # Yoshi, go!
+	print(pikachu + ", go!") # <Pikachu:Yoshi>, go!
 ```
-
-When printing an object, we get the name of the class and the memory address where it is kept. We can provide a default string that represents better our object through the ``__str__()`` instance method.
 
 *This is a non-exhaustive guide to oriented-object programming approach as we don't talk about inheritance or other OOP subjects such as encapsulation.*

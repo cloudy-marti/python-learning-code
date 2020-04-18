@@ -21,10 +21,10 @@ Updated: 18/04/2020\
 Python is a **high-level**, **general-purpose** programming language. It is an **interpreted** language, that is, there is an interpreter capable of executing each instruction without previously compiling the program into machine-language instructions.
 
 It supports :
-* **Multi-paradigm programming**
+* **Multi-paradigm programming**\
 Python supports procedural, declarative, object and functional programming. This guide will focus on the object paradigm.
 
-* **Cross-platform**
+* **Cross-platform**\
 Python interpreters exist in many operating systems such as Windows, Linux, MacOS, etc. This guide has been written from a Windows environment.
 
 Python is **garbage-collected**, that is, we don't need to manage the memory manually (unlike C).

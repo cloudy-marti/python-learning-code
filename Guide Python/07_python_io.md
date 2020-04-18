@@ -79,16 +79,19 @@ with open(file, 'r') as file:
 	all_data = read()
 	print(all_data)
 
+with open(file, 'r') as file:
 	while True:
 		line = file.readline()
 		print(line)
 		if not line:
 			break
 
+with open(file, 'r') as file:
 	lines = readlines()
 	for line in lines:
 		print(line)
 
+with open(file, 'r') as file:
 	for line in file:
 		print(line)
 ```

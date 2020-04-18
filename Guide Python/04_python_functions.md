@@ -44,7 +44,7 @@ def increment(arg1):
 	return arg1 += 1
 ```
 
-A function in Python can also return multiple values, in the form of a **tuple** (see [Python Structures](./python_structures.md)).
+A function in Python can also return multiple values, in the form of a **tuple** (see [Python Collections](./05_python_collections.md)).
 
 ```python
 def increment_all(arg1, arg2):
@@ -118,6 +118,8 @@ add = lambda first, second: first + second
 print(increment(0))   # 1
 print(add(1, 2))      # 3
 ```
+
+Lambda functions allows us to make ``higher order functions``, that is, functions that have another function as an argument.
 
 ## Modules and Import
 

@@ -12,6 +12,7 @@ Updated: 18/04/2020\
 5. [For Loop](#for-loop)\
 5.1. [Enumerate Function](#enumerate-function)
 6. [Break Statement](#break-statement)
+7. [Continue Statement](#continue-statement)
 
 # Flow Control
 
@@ -28,7 +29,7 @@ A comparison operators perform some sort of test and returns True or False as a 
 * Less than ``<``
 * Greater than ``>``
 * Less than or equal to ``<=``
-* Greater than or equal to ``>``
+* Greater than or equal to ``>=``
 
 Several tests can be done at once using the logical operators. See [Python Firsts Steps](./python_firsts_tests.md).
 
@@ -74,10 +75,12 @@ print("Whatever happens before, I will be printed anyway.")
 You can *nest* if statements inside another.
 
 ```python
-counter = 0
+counter = 1
 
-if counter == 0 or counter == 1:
-	if True:
+# if counter is in between 0 and 10 included
+if counter >= 0 or counter <= 10:
+	# if counter is lower than 5
+	if counter < 5:
 		print("I will be printed!")
 ```
 
@@ -140,7 +143,7 @@ We can also use the function ``enumerate()`` function to iterate through a colle
 ```python
 my_collection = [3, 2, 3, 6, 1]
 
-for index, element in my_collection:
+for index, element in enumerate(my_collection):
 	print(str(index) + " = " + str(element))
 
 print("End of loop !")
@@ -155,7 +158,7 @@ print("End of loop !")
 '''
 ```
 
-## Break statement
+## Break Statement
 
 The statement ``break`` allows us to stop iterating no matter what and the program will keep executing if there are more instructions after the loop.
 
@@ -178,4 +181,19 @@ print("End of loop !")
 	32
 	64
 '''
+```
+
+## Continue Statement
+
+The statement ``continue`` allows us to stop the current iteration and proceed to the next one.
+
+```python
+counter = 0
+
+while counter < 100:
+    counter += 1
+    # if counter is not divisible by 2, go to the next iteration 
+    if not (counter % 2 == 0):
+        continue
+    print(counter)
 ```

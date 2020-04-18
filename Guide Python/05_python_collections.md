@@ -29,7 +29,7 @@ Updated: 18/04/2020\
 
 ## Introduction
 
-Earlier in this guide we talked about built-in types such as ``integer``, ``float``, ``boolean`` and ``string`` (see [Python First Program](./python_first_program.md)). Here we will talk about built-in ``collection types`` that represent a containers of other types.
+Earlier in this guide we talked about built-in types such as ``integer``, ``float``, ``boolean`` and ``string`` (see [Python First Program](./02_python_first_program.md)). Here we will talk about built-in ``collection types`` that represent a containers of other types.
 
 ## Tuples
 
@@ -42,7 +42,7 @@ Tuples are defined with parentheses and their members are separated by commas. Y
 ```python
 empty_tuple = ()
 
-single_tuple = ('e',)
+single_tuple = ('e')
 
 another_tuple = ('e1', 'e2', 'e3', ...)
 

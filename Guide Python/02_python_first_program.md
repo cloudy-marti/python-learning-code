@@ -18,6 +18,8 @@ Updated: 18/04/2020\
 
 Since Python doesn't use brackets, your code needs to be well indented to be understood by the interpreter.
 
+You can choose your indent but it has to be the same in your entire code. In this guide we will use a tab.
+
 ```python
 # good code
 if True:
@@ -50,7 +52,7 @@ We can add comments a program, which will be visible only by the reader of the s
 
 ## Variables
 
-Usually, values aren't just used once and forgotten. You may want to use variables to keep their reference and use or even change the value.
+Usually, values aren't just used once and forgotten. You may want to use variables to keep their reference or even change their value.
 
 You don't need to specify the type of the variable when declaring it ; since Python does dynamic typing, the type of the variable will be interpreted by the value given.
 
@@ -119,7 +121,7 @@ hello_world = "Hello World"   # string
 hello_world2 = 'Hello World'  # string
 ```
 
-Check below for operations with strings. Strings can also be manipulated as if they were lists (see [Python Structures](./python_structures.md)).
+Check below for operations with strings. Strings can also be manipulated as if they were lists (see [Python Collections](./05_python_collections.md)).
 
 ## Interactive program
 
@@ -162,11 +164,11 @@ print(input_str)
 
 The ``input()`` function will read what the user writes in the console until the first end of line (EOL).
 
-## Commandline Arguments
+## Command line Arguments
 
 Another way to interact with the outside is to take in consideration parameters given within the commandline, when executing the program.
 
-To do so, we need to import the library ``sys`` that will allow us to access the commandline. We will then be able to retrieve the arguments.
+To do so, we need to import the library ``sys`` that will allow us to access the command line. We will then be able to retrieve the arguments that are saved in a tuple.
 
 ```bash
 python3 hello.py hello World
