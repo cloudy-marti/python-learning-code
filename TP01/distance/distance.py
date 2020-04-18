@@ -47,7 +47,7 @@ def closest(string, possibilities):
 
 	return closest_str
 
-
+"""
 print("distance1 function result = {0}".format(distance1("abracadabra", "macabre")))
 
 str_list = ("macabre", "acadabra", "bra", "henlo", "macabre", "coucou")
@@ -61,3 +61,4 @@ cProfile.run('closest("abracadabra", str_list)', sort='time')
 print("dictionary should not be empty")
 print(dist_memory)
 cProfile.run('closest("abracadabra", str_list)', sort='time')
+"""
