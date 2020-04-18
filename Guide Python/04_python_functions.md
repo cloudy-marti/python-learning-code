@@ -10,6 +10,7 @@ Updated: 18/04/2020
 2.2. [Default Parameter Values](#default-parameter-values)\
 2.3. [Variadic Arguments](#variadic-arguments)
 3. [Anonymous Functions](#anonymous-functions)
+4. [Modules and Import](#modules-and-import)
 
 # Python Functions
 
@@ -116,3 +117,23 @@ add = lambda first, second: first + second
 print(increment(0))   # 1
 print(add(1, 2))      # 3
 ```
+
+## Modules and Import
+
+Modules allow the developer to group related functions, classes and code in a library or a single file. This allows the code to be organized so that it can be maintained and be easily read.
+
+We can use the keyword ``import`` in our file in order to use code from another module, such as functions or attributes. We can also use the statement ``from <module> import <code>`` to use the code without having to write the name of the module each time.
+
+```python
+import labyrinth
+
+labyrinth.function1()
+labyrinth.function2()
+
+from labyrinth import *
+
+function1()
+function2()
+```
+
+By convention, imports are done at the top of the file.
