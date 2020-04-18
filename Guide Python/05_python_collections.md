@@ -12,7 +12,7 @@ Updated: 18/04/2020\
 3. [Lists](#lists)\
 3.1. [Creation](#list-creation)\
 3.2. [Value Access](#list-value-access)\
-3.3. [Add and Insert](#list-add-and-insert)\
+3.3. [Add and Append](#list-add-and-append)\
 3.4. [Remove and Pop](#list-remove-and-pop)
 4. [Sets](#sets)\
 4.1. [Creation](#set-creation)\
@@ -21,7 +21,9 @@ Updated: 18/04/2020\
 4.4. [Remove](#set-remove)
 5. [Dictionary](#dictionary)\
 5.1. [Creation](#dictionary-creation)\
-5.2. [Operations](#dictionary-operations)
+5.2. [Value Access](#dictionary-value-access)\
+5.3. [Add and Update](#dictionary-add-and-update-value)\
+5.4. [Remove](#dictionary-remove)
 
 # Collections
 
